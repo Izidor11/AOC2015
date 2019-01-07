@@ -1,0 +1,33 @@
+<?php
+$input = 'ckczppom';
+$hashFoundFiveZ = false;
+$i = 0;
+while(!$hashFoundFiveZ)
+{
+	$hash = md5($input . $i);
+	if(substr($hash, 0, 5) === '00000')
+	{
+		$hashFoundFiveZ = true;
+	}
+	else
+	{
+		$i++;
+	}
+}
+echo $hash. '   öt nullával kezdődő:   ' . $i . PHP_EOL;
+
+$hashFoundSixZ = false;
+$i = 1;
+while(!$hashFoundSixZ)
+{
+	$hash = md5($input . $i);
+	if(substr($hash, 0, 6) === '000000')
+	{
+		$hashFoundSixZ = true;
+	}
+	else
+	{
+		$i++;
+	}
+}
+echo $hash. '    hat nullával kezdődő    ' . $i;
